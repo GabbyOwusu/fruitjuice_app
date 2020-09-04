@@ -3,9 +3,17 @@ import 'package:flutter/material.dart';
 
 class JuiceDetails extends StatelessWidget {
   final String image;
+  final String title;
   final Color color;
+  final Color textcolor;
 
-  JuiceDetails({this.color, this.image});
+  JuiceDetails({
+    this.color,
+    this.title,
+    this.image,
+    this.textcolor,
+  });
+
   @override
   Widget build(BuildContext context) {
     List<String> desserts = [
@@ -37,39 +45,46 @@ class JuiceDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Texts(
-                  text: 'Strawberry\nFields',
+                  text: title,
                   fontweight: FontWeight.w600,
                   fontsize: 26,
+                  textcolor: textcolor,
                 ),
                 Texts(
                   text: 'Frozen Blue Berries',
                   fontweight: FontWeight.normal,
                   fontsize: 18,
+                  textcolor: textcolor,
                 ),
                 Texts(
                   text: 'Banana',
                   fontweight: FontWeight.normal,
                   fontsize: 18,
+                  textcolor: textcolor,
                 ),
                 Texts(
                   text: 'Strawberry Juice',
                   fontweight: FontWeight.normal,
                   fontsize: 18,
+                  textcolor: textcolor,
                 ),
                 Texts(
                   text: 'Vitamin C\nHealthy',
                   fontweight: FontWeight.w600,
                   fontsize: 18,
+                  textcolor: textcolor,
                 ),
                 Row(
                   children: [
                     Container(
-                        margin: EdgeInsets.only(left: 20, top: 20),
-                        child: Icon(Icons.star, color: Colors.white)),
+                      margin: EdgeInsets.only(left: 20, top: 20),
+                      child: Icon(Icons.star, color: textcolor),
+                    ),
                     Texts(
                       text: '4.8',
                       fontweight: FontWeight.w600,
                       fontsize: 18,
+                      textcolor: textcolor,
                     ),
                   ],
                 ),
@@ -77,16 +92,19 @@ class JuiceDetails extends StatelessWidget {
                   text: 'Starting from',
                   fontweight: FontWeight.normal,
                   fontsize: 18,
+                  textcolor: textcolor,
                 ),
                 Texts(
                   text: '20',
                   fontweight: FontWeight.w600,
                   fontsize: 20,
+                  textcolor: textcolor,
                 ),
                 Texts(
                   text: 'Promotional Price',
                   fontweight: FontWeight.normal,
                   fontsize: 18,
+                  textcolor: textcolor,
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 20, left: 20),
@@ -111,29 +129,31 @@ class JuiceDetails extends StatelessWidget {
                 SizedBox(height: 20),
                 Texts(
                   text: 'Suggested Desserts',
+                  textcolor: textcolor,
                   fontweight: FontWeight.w600,
                   fontsize: 18,
                 ),
                 Texts(
                   text: 'Here are different flavours of your favorite dessert',
                   fontweight: FontWeight.normal,
+                  textcolor: textcolor,
                   fontsize: 13,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    ...List.generate(desserts.length, (index) {
-                      return Container(
-                        margin: EdgeInsets.only(top: 20),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.asset(
-                          desserts[index],
-                          width: 120,
-                        ),
-                      );
-                    }),
+                    ...List.generate(
+                      desserts.length,
+                      (index) {
+                        return Container(
+                          margin: EdgeInsets.only(top: 20),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Image.asset(desserts[index], width: 120),
+                        );
+                      },
+                    ).toList()
                   ],
                 )
               ],
