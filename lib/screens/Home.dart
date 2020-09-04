@@ -89,7 +89,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(
                         builder: (context) => JuiceDetails(
                           image: 'images/yellow.png',
+                          title: 'Melon yellow',
                           color: Colors.yellow,
+                          textcolor: Colors.black,
                         ),
                       ),
                     );
@@ -104,6 +106,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => JuiceDetails(
+                          title: 'Strawberry \nfields',
+                          textcolor: Colors.white,
                           image: 'images/pink.png',
                           color: Color.fromRGBO(255, 104, 127, 1),
                         ),
@@ -115,10 +119,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   name: 'Strawberry fields',
                 )
               ],
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
+
+// class Text {
+//   String name;
+//   Color color;
+
+//   Text({this.name, this.color});
+// }
