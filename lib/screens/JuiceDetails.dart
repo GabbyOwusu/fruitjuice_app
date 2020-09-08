@@ -37,9 +37,15 @@ class JuiceDetails extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              right: -250,
-              top: -80,
-              child: Image.asset(image),
+              right: -100,
+              top: 50,
+              child: Hero(
+                tag: image,
+                child: Image.asset(
+                  image,
+                  width: 350,
+                ),
+              ),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
