@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               margin: EdgeInsets.only(left: 20),
               child: Text(
-                'Healthy juices of your everyone. Pick any of \n your flavor',
+                'Healthy juices of your everyone. Pick any of \nyour flavor',
                 style: TextStyle(
                   fontFamily: 'Gilroy',
                   fontSize: 17,
@@ -80,7 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(height: 60),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Juices(
                   ontap: () {
@@ -100,6 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   description: 'Melon, Pinneapple Juice \n Banana',
                   name: 'Melon Yellow',
                 ),
+                Spacer(),
                 Juices(
                   ontap: () {
                     Navigator.push(
