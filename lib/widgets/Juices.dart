@@ -16,16 +16,17 @@ class Juices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        ontap();
-      },
+      onTap: ontap,
       child: Column(
         children: [
-          Container(
-            alignment: Alignment.center,
-            child: Image.asset(
-              image,
-              width: 180,
+          Hero(
+            tag: image,
+            child: Container(
+              alignment: Alignment.center,
+              child: Image.asset(
+                image,
+                width: 180,
+              ),
             ),
           ),
           Container(
@@ -34,7 +35,7 @@ class Juices extends StatelessWidget {
               name,
               style: TextStyle(
                 fontFamily: 'Gilroy',
-                fontSize: 20,
+                fontSize: 17,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -47,7 +48,7 @@ class Juices extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Gilroy',
-                fontSize: 15,
+                fontSize: 13,
               ),
             ),
           ),
