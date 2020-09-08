@@ -6,7 +6,12 @@ class Texts extends StatelessWidget {
   final FontWeight fontweight;
   final Color textcolor;
 
-  Texts({this.fontsize, this.text, this.fontweight, this.textcolor});
+  Texts({
+    this.fontsize,
+    this.text,
+    this.fontweight,
+    this.textcolor,
+  });
 
   @override
   Widget build(BuildContext context) {
